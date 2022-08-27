@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<opencv_storage>
+
+<!--
+    能量机关打击模型参数 单位 mm
+    h_buff         - 能量机关中心高度 单项赛：2386 对抗赛：2296
+    r_buff         - 能量机关半径
+    h_platform     - 狙击点高度
+    h_car          - 枪管离机器人底面高度
+    dist_buff      - 目标的水平直线距离 单项赛：6956 对抗赛：7100
+  --> 
+<h_buff>2296</h_buff>
+<r_buff>700</r_buff>
+<dist_buff>7100</dist_buff>
+<h_car>350</h_car>
+<h_platform>850</h_platform>
+<!--x,y,z坐标偏移量(相机至枪管),单位m P_barrel = P_cam + offset-->  
+<T_cp type_id="opencv-matrix">
+  <rows>1</rows>
+  <cols>3</cols>
+  <dt>d</dt>	
+  <data>
+    0.
+    0.
+    0.
+  </data>
+</T_cp>
+<!--内参矩阵-->
+<!--陀螺仪到相机的变换矩阵 R_c = T_ci * R_i-->
+<T_ic type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>4</cols>
+  <dt>d</dt>
+  <data> 
+    0.02617095   0.99945437  -0.02015029  -0.00043464
+    0.1181205   -0.02310774  -0.99273037   0.00326701
+    -0.99265433  0.02360054 -0.1186608  -0.00323944
+    0.          0.          0.          1.
+  </data>
+</T_ic>
+<!--相机到陀螺仪的变换矩阵 R_i = T_ic * R_c-->
+<T_ci type_id="opencv-matrix">
+  <rows>4</rows>
+  <cols>4</cols>
+  <dt>d</dt>
+  <data> 
+    0.02617095   0.1181205   -0.99265433 -0.00359017
+    0.99945437  -0.02310774   0.02360054  0.00058635
+    -0.02015029 -0.99273037  -0.1186608   0.00285011
+    0.          0.          0.         1.
+  </data>
+</T_ci>
+<Intrinsic type_id="opencv-matrix">
+  <rows>3</rows>
+  <cols>3</cols>
+  <dt>d</dt>
+  <data>
+    3626.5098590324505   0.   689.1283950373454 
+    0.  3626.285156056285  582.7004766963166 
+     0.  0.  1.
+    </data>
+</Intrinsic>
+<!--畸变矩阵-->
+<Coeff type_id="opencv-matrix">
+  <rows>1</rows>
+  <cols>5</cols>
+  <dt>d</dt>
+  <data>
+    -0.04251601401350153  0.963321415304225  0.  -0.0009602427973179668  -0.006641239457517189
+  </data>
+</Coeff>
+</opencv_storage>
