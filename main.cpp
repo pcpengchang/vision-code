@@ -25,6 +25,7 @@
 /////** @copyright Copyright (c) 2022 DGUT_ACE **/////
 
 #include "thread_task.h"
+#include <X11/Xlib.h>
 
 void control() {
 
@@ -55,7 +56,7 @@ int main() {
     control();
     std::cout << "\x1B[2J\x1B[H"; // 清空终端区显示
 
-    system("echo 111111 | sudo -S chmod 777 /dev/ttyUSB*");// 赋予串口权限
+    //system("echo 111111 | sudo -S chmod 777 /dev/ttyUSB*");// 赋予串口权限
 
     auto task = ObjManager<ThreadTask>::bind("ThreadTask");// 开启相关线程
 
